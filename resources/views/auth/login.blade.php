@@ -12,20 +12,18 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Login as:') }}</label>
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Login as:') }}</label>
 
                             <div class="col-md-6">
-                                <div class="form-group form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                    <select class="form-control" id="role">
-                                        <option>Admin</option>
-                                        <option>User</option>
-                                    </select>
-                                </div>
-                                <input id="role" type="role" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                            <div class="form-group">
+                                <select class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autofocus id="role">
+                                    <option>Admin</option>
+                                    <option>User</option>
+                                </select>
+                            </div>
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
