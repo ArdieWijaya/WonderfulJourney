@@ -56,16 +56,16 @@
                     @endguest
 
                     @if(Auth::check())
-                        @if((Auth::user()->role == 'Admin'))
-                            <a class="nav-link text-white mr-2" href="{{ route('homepage') }}">Home</a>
-                            <a class="nav-link text-white mr-2" href="/">Admin</a>
-                            <a class="nav-link text-white mr-2" href="{{ route('adminuser') }}">User</a>
-                        @endif
-                        @if((Auth::user()->role == 'User'))
-                            <a class="nav-link text-white mr-2" href="{{ route('homepage') }}">Home</a>
-                            <a class="nav-link text-white mr-2" href="{{ route('userprofile') }}">Profil</a>
-                            <a class="nav-link text-white mr-2" href="{{ route('userblog') }}">Blog</a>
-                        @endif
+                    @if((Auth::user()->role == 'Admin'))
+                    <a class="nav-link text-white mr-2" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link text-white mr-2" href="/">Admin</a>
+                    <a class="nav-link text-white mr-2" href="{{ route('adminuser') }}">User</a>
+                    @endif
+                    @if((Auth::user()->role == 'User'))
+                    <a class="nav-link text-white mr-2" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link text-white mr-2" href="{{ route('userprofile') }}">Profil</a>
+                    <a class="nav-link text-white mr-2" href="{{ route('userblog') }}">Blog</a>
+                    @endif
                     @endif
                 </ul>
 
@@ -89,7 +89,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>
                                 {{ __('Logout') }}
                             </a>
 

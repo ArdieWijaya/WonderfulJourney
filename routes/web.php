@@ -33,4 +33,4 @@ Route::post('/profile', 'UserController@profile_post')->name('userprofilepost')-
 Route::get('/blog', 'UserController@blog')->name('userblog')->middleware('user');
 Route::get('/blog/{id}/delete', 'UserController@delete')->name('userblogdelete')->middleware('user');
 Route::get('/blog/create', 'UserController@blogcreate')->name('userblogcreate')->middleware('user');
-Route::post('/blog/create/post', 'UserController@blogcreatepost')->name('userblogcreatepost')->middleware('user');
+Route::post('/blog/create/post', 'UserController@blogcreatepost')->name('userblogcreatepost');

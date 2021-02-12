@@ -55,6 +55,7 @@ class UserController extends Controller
 
     public function blogcreatepost(Request $request){
         $categories = Category::all();
+        $blogs = Article::where('user_id', '=', Auth::user()->id)->get();
 
         $request->file('image')->storeAs('/public', $request->image);
         $url = Storage::url($request->image);
@@ -69,6 +70,6 @@ class UserController extends Controller
         
         $article->save();
 
-        return view('user.blog',['categories' => $categories]);
+        return view('user.blog',['categories' => $categories, 'blogs' => $blogs]);
     }
 }
