@@ -67,9 +67,9 @@ class UserController extends Controller
             'image' => $url,
             'description' => $request->description,
         ]);
-        
+
         $article->save();
 
-        return view('user.blog',['categories' => $categories, 'blogs' => $blogs]);
+        return redirect(route('userblog'));
     }
 }
